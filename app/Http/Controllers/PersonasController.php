@@ -20,7 +20,7 @@ class PersonasController extends Controller
     {
         //Formulario donde ageregamos datos
 
-        return "Aquí puedes agregar";
+        return view('agregar');
     }
 
 

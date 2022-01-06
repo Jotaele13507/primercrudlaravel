@@ -9,7 +9,8 @@
         <div class="card-body">
 
             <p class="card-text"></p>
-            <form action="#">
+            <form action="{{ route('personas.store')}}" method="POST">
+                @csrf
                 <label for="">Nombre </label>
                 <input type="text" name="nombre" class="form-control" required>
                 <label for="">Apellido </label>

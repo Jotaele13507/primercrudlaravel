@@ -7,9 +7,18 @@
     <div class="card">
         <h5 class="card-header">CRUD con Laravel 8 y MySQL</h5>
         <div class="card-body">
-
+            <div class="row">
+                <div class="col-sm-12">
+                    @if ($mensaje = Session::get('Exitoso'))
+                        <div class="alert alert-success" role="alert">
+                            {{ $mensaje }}
+                        </div>
+                    @endif
+                </div>
+            </div>
             <p>
-                <a href="{{ route('personas.create') }}" class="btn btn-primary"><span class="fa solid fa-user-plus"></span>
+                <a href=" {{ route('personas.create') }}" class="btn btn-primary"><span
+                        class="fa solid fa-user-plus"></span>
                     Agregar Nueva Persona</a>
             </p>
             <hr>
@@ -32,7 +41,7 @@
                                 <td>{{ $item->correo }}</td>
                                 <td>{{ $item->fecha_nacimiento }}</td>
                                 <td>
-                                    <form action="#">
+                                    <form action="{{route("personas.edit", $item->id)}}" method="GET">
                                         <button class="btn btn-warning btn-sm">
                                             <span class="fas fa-user-edit"></span>
                                         </button>

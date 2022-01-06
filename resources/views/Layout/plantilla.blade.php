@@ -15,7 +15,9 @@
 
 <body>
     <div class="container">
+        <br><br>
         @yield('contenido')
+        
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
 

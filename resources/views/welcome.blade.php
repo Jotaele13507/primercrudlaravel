@@ -3,13 +3,14 @@
 @section('tituloPagina', 'Crud con laravel 8')
 
 @section('contenido')
-    <br><br>
+
     <div class="card">
         <h5 class="card-header">CRUD con Laravel 8 y MySQL</h5>
         <div class="card-body">
-            
+
             <p>
-                <a href="{{ route('personas.create') }}" class="btn btn-primary"> Agregar Nueva Persona</a>
+                <a href="{{ route('personas.create') }}" class="btn btn-primary"><span class="fa solid fa-user-plus"></span>
+                    Agregar Nueva Persona</a>
             </p>
             <hr>
             <p class="card-text">
@@ -29,9 +30,21 @@
                                 <td>{{ $item->nombre }}</td>
                                 <td>{{ $item->apellido }}</td>
                                 <td>{{ $item->correo }}</td>
-                                <td>{{ $item->fecha_nacimiento }}</td>}
-                                <td></td>
-                                <td></td>
+                                <td>{{ $item->fecha_nacimiento }}</td>
+                                <td>
+                                    <form action="#">
+                                        <button class="btn btn-warning btn-sm">
+                                            <span class="fas fa-user-edit"></span>
+                                        </button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="#">
+                                        <button class="btn btn-danger btn-sm">
+                                            <span class="fas fa-user-times"></span>
+                                        </button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

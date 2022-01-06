@@ -32,20 +32,21 @@ class PersonasController extends Controller
     public function show(Personas $personas)
     {
         //Servirá para obtener un registro de nuestra tabla
+        return view('eliminar');
     }
 
 
     public function edit(Personas $personas)
     {
         //Sirve para traer los datos que se van a editar y los coloca en un formulario.
-
-        return "Aquí se edita";
+        return view('actualizar');
     }
 
 
     public function update(Request $request, Personas $personas)
     {
         //Actualiza los datos en la BD
+
     }
 
 

@@ -1,6 +1,6 @@
 @extends('layout/plantilla')
 
-@section('tituloPagina', 'Agregar Personas')
+@section('tituloPagina', 'Actualizar Datos Personas')
 
 @section('contenido')
     <br><br>
@@ -21,7 +21,7 @@
                 <br>
                 <a href="{{ route('personas.index') }}" class="btn btn-secondary"><span class="fas fa-undo-alt"></span>
                     Regresar</a>
-                <button class="btn btn-primary"><span class="fa solid fa-user-plus"></span> Agregar</button>
+                <button class="btn btn-warning"><span class="fas fa-user-edit"></span> Actualizar</button>
             </form>
 
         </div>

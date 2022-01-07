@@ -11,7 +11,7 @@ class PersonasController extends Controller
     public function index()
     {
         //PAGINA DE INICIO
-        $datos = Personas::all();
+        $datos = Personas::paginate();
         return view('welcome', compact('datos'));
     }
 
@@ -37,10 +37,12 @@ class PersonasController extends Controller
         return redirect()->route('personas.index')->with("Exitoso", "Agregado con éxito!");
     }
 
-    public function show(Personas $personas)
+    public function show($id)
     {
         //Servirá para obtener un registro de nuestra tabla
-        return view('eliminar');
+        $personas = Personas::find($id);
+        return view('eliminar', compact('personas'));
+
     }
 
 
@@ -68,8 +70,12 @@ class PersonasController extends Controller
     }
 
 
-    public function destroy(Personas $personas)
+    public function destroy($id)
     {
         //Elimina un registro
+        $personas = Personas::find($id);
+        $personas->delete();
+        return redirect()->route('personas.index')->with("Exitoso", "Eliminado con éxito!");
+
     }
 }

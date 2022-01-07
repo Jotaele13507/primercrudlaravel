@@ -24,14 +24,19 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td></td>
+                                <td>{{ $personas->nombre }}</td>
+                                <td>{{ $personas->apellido }}</td>
+                                <td>{{ $personas->correo }}</td>
+                                <td>{{ $personas->fecha_nacimiento }}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
 
-            <form action="#">
+            <form action="{{ route ('personas.destroy', $personas->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
                 <a href="{{ route('personas.index') }}" class="btn btn-secondary"><span class="fas fa-undo-alt"></span>
                     Regresar</a>
                 <button class="btn btn-danger"><span class="fas fa-check"></span> Si, Estoy seguro</button>

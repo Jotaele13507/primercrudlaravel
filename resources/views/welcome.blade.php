@@ -48,7 +48,7 @@
                                     </form>
                                 </td>
                                 <td>
-                                    <form action="#">
+                                    <form action="{{route("personas.show", $item->id)}}" method="GET">
                                         <button class="btn btn-danger btn-sm">
                                             <span class="fas fa-user-times"></span>
                                         </button>
@@ -58,6 +58,12 @@
                         @endforeach
                     </tbody>
                 </table>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-12">
+                        {{ $datos->links() }}
+                    </div>
+                </div>
             </div>
             </p>
         </div>
